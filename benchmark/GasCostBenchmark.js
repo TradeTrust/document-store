@@ -137,8 +137,8 @@ describe("Gas Cost Benchmarks", () => {
           ...state,
           [current.contract]: current.gas,
         }),
-        {}
-      )
+        {},
+      ),
     );
     // eslint-disable-next-line no-console
     console.table(records);
