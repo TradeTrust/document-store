@@ -58,6 +58,8 @@ contract BaseDocumentStore is Initializable {
   function _issue(bytes32 document) internal onlyNotIssued(document) {
     documentIssued[document] = block.number;
     emit DocumentIssued(document);
+
+    return true;
   }
 
   /**
