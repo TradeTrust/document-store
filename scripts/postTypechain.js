@@ -41,7 +41,7 @@ readInterface.on("close", () => {
   ];
   const statements = exportsArr.map(
     ({ name, type, asName, path }) =>
-      `export${type ? " type" : ""} { ${name} ${asName ? `as ${asName}` : ""}} from "${path}";`
+      `export${type ? " type" : ""} { ${name} ${asName ? `as ${asName}` : ""}} from "${path}";`,
   );
   if (!statements || !statements.length) return;
   const data = [...headers, ...statements].join("\n");

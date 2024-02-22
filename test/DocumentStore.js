@@ -84,7 +84,7 @@ describe("DocumentStore", async () => {
       // Check that reissue is rejected
       await expect(DocumentStoreInstance.issue(documentMerkleRoot)).to.be.rejectedWith(
         /revert/,
-        "Duplicate issue was not rejected"
+        "Duplicate issue was not rejected",
       );
     });
 
@@ -94,7 +94,7 @@ describe("DocumentStore", async () => {
       assert.isFalse(hasNoIssuerRole, "Non-Issuer Account has issuer role");
 
       await expect(DocumentStoreInstance.connect(account).issue(documentMerkleRoot)).to.be.rejectedWith(
-        /AccessControl/
+        /AccessControl/,
       );
     });
 
@@ -153,7 +153,7 @@ describe("DocumentStore", async () => {
       // Check that reissue is rejected
       await expect(DocumentStoreInstance.bulkIssue(documentMerkleRoots)).to.be.rejectedWith(
         /revert/,
-        "Duplicate issue was not rejected"
+        "Duplicate issue was not rejected",
       );
     });
 
@@ -166,7 +166,7 @@ describe("DocumentStore", async () => {
 
       // FIXME:
       await expect(DocumentStoreInstance.connect(nonIssuerAccount).bulkIssue(documentMerkleRoots)).to.be.rejectedWith(
-        /AccessControl/
+        /AccessControl/,
       );
     });
 
@@ -277,7 +277,7 @@ describe("DocumentStore", async () => {
       assert.isFalse(hasNoRevokerRole, "Non-Revoker Account has revoker role");
 
       await expect(DocumentStoreInstance.connect(nonRevokerAccount).revoke(documentMerkleRoot)).to.be.rejectedWith(
-        /AccessControl/
+        /AccessControl/,
       );
     });
 
@@ -338,7 +338,7 @@ describe("DocumentStore", async () => {
       // Check that revoke is rejected
       await expect(DocumentStoreInstance.bulkRevoke(documentMerkleRoots)).to.be.rejectedWith(
         /revert/,
-        "Duplicate revoke was not rejected"
+        "Duplicate revoke was not rejected",
       );
     });
 
@@ -349,7 +349,7 @@ describe("DocumentStore", async () => {
 
       const documentMerkleRoots = ["0x3a267813bea8120f55a7b9ca814c34dd89f237502544d7c75dfd709a659f6330"];
       await expect(DocumentStoreInstance.connect(nonRevokerAccount).bulkRevoke(documentMerkleRoots)).to.be.rejectedWith(
-        /AccessControl/
+        /AccessControl/,
       );
     });
 
