@@ -55,7 +55,7 @@ contract BaseDocumentStore is Initializable {
    * @notice Issues a document
    * @param document The hash of the document to issue
    */
-  function _issue(bytes32 document) internal onlyNotIssued(document) {
+  function _issue(bytes32 document) internal onlyNotIssued(document) returns (bool) {
     documentIssued[document] = block.number;
     emit DocumentIssued(document);
 
