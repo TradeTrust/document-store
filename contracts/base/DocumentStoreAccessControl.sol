@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
-
+// solhint-disable gas-custom-errors
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
+import {AccessControlUpgradeable} from "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
 
 /**
  * @title DocumentStoreAccessControl
